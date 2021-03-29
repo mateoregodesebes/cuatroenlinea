@@ -27,9 +27,19 @@ def dibujarTablero(tablero):
     for x in tablero:
         print(x)
         
+def verificarSecuencia(secuencia):
+    validez = 1
+    for x in secuencia:
+        if x < 1 or x > 7:
+            validez = 0
+    return validez
+
 secuencia = [1, 2, 3, 1]
-dibujarTablero(
-        completarTableroenOrden(
-            secuencia, tableroVacio()
-        )
-)
+if verificarSecuencia(secuencia) == 1:
+    dibujarTablero(
+            completarTableroenOrden(
+                secuencia, tableroVacio()
+            )
+    )
+else:
+    print("Al menos uno de los numeros de la secuencia de jugadas es inválido")
