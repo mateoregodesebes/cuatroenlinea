@@ -7,6 +7,13 @@ def tableroVacio():
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
     ]
+def contenidoColumna(nro_columna, tablero):
+    columna = []
+    for fila in tablero:
+        celda = fila[nro_columna - 1]
+        columna.append(celda) 
+    return columna
+
 def completarTableroenOrden(secuencia, tablero):
     x = 1
     for element in secuencia:
@@ -34,12 +41,10 @@ def verificarSecuencia(secuencia):
             validez = 0
     return validez
 
-secuencia = [1, 2, 3, 1]
+secuencia = [1, 2, 3, 1, 3, 4]
+tablero = []
 if verificarSecuencia(secuencia) == 1:
-    dibujarTablero(
-            completarTableroenOrden(
-                secuencia, tableroVacio()
-            )
-    )
+    tablero = completarTableroenOrden(secuencia, tableroVacio())
+    dibujarTablero(tablero)
 else:
     print("Al menos uno de los numeros de la secuencia de jugadas es inválido")
