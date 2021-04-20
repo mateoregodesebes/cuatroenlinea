@@ -14,6 +14,16 @@ def contenidoColumna(nro_columna, tablero):
         columna.append(celda) 
     return columna
 
+def todasColumnas(tablero):
+    for x in range (1, 8):
+        columna = []
+        columna = contenidoColumna(x, tablero)
+        print(columna)
+    return
+    
+def todasFilas(tablero):
+    print(tablero)
+
 def completarTableroenOrden(secuencia, tablero):
     x = 1
     for element in secuencia:
@@ -48,3 +58,5 @@ if verificarSecuencia(secuencia) == 1:
     dibujarTablero(tablero)
 else:
     print("Al menos uno de los numeros de la secuencia de jugadas es inválido")
+todasColumnas(tablero)
+todasFilas(tablero)
