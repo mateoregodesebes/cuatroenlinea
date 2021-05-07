@@ -41,8 +41,12 @@ def soltarFichaenColumna(ficha, columna, tablero):
             return
 
 def dibujarTablero(tablero):
+    cont = 0
     for x in tablero:
-        print(x)
+        print("|",x,"|")
+        cont = cont + 1
+        if(cont == 6):
+            print("+-----------------------+")
         
 def verificarSecuencia(secuencia):
     validez = 1
