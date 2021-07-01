@@ -40,10 +40,10 @@ def soltarFichaenColumna(ficha, columna, tablero):
             tablero[fila - 1][columna - 1] = ficha
             return
 
-def dibujarTablero(tablero):
+def dibujarTablero(tablero): # pragma: no cover
     cont = 0
     for x in tablero:
-        print("|",x,"|")
+        print("|",x,"|") # Ignoro dibujarTablero en coverage debido a que no hay forma aparente de testear que funcione bien
         cont = cont + 1
         if(cont == 6):
             print("+-----------------------+")
@@ -55,12 +55,13 @@ def verificarSecuencia(secuencia):
             validez = 0
     return validez
 
-secuencia = [1, 2, 3, 1, 3, 4]
+secuencia = [1, 2, 3, 1, 3]
 tablero = []
 if verificarSecuencia(secuencia) == 1:
     tablero = completarTableroenOrden(secuencia, tableroVacio())
     dibujarTablero(tablero)
+    todasColumnas(tablero)
+    todasFilas(tablero)
+
 else:
     print("Al menos uno de los numeros de la secuencia de jugadas es inválido")
-todasColumnas(tablero)
-todasFilas(tablero)
