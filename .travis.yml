@@ -1,0 +1,8 @@
+language: python 
+
+rmv: 
+- "3.9"
+
+scripts:
+
+  - python -m py.test
